@@ -1,0 +1,118 @@
+<project name="enough-j2mepolish-example" default="xemulate">
+
+	<property file="${user.name}.properties" />
+	<property file="midlet.properties" />
+	<property name="polish.home" value="/Developer/Applications/J2ME-Polish" />
+	<property file="${polish.home}/global.properties" />
+	<property name="nokia.home" value="/" />
+	<property name="sony-ericsson.home" value="/" />
+	<property name="motorola.home" value="/" />
+	<property name="mpp.home" value="/Developer/Applications/mpp-sdk" />
+	<property name="siemens.home" value="/" />
+	<taskdef name="j2mepolish"
+	         classname="de.enough.polish.ant.PolishTask"
+	         classpath="${polish.home}/lib/enough-j2mepolish-build.jar:${polish.home}/lib/jdom.jar" />
+
+
+	<target name="xemulate" depends="clean, test, blue, build, emulate">
+	</target>
+	<target name="clean">
+		<delete dir="bin/working" />
+		<delete dir="bin/build" />
+	</target>
+	<target name="test">
+		<property name="test" value="true" />
+		<property name="test.version" value="xx_big" />
+	</target>
+	<target name="init">
+		<property name="test" value="false" />
+		<property name="customization" value="blue" />
+		<property name="dir.work" value="bin/working/${customization}" />
+		<property name="dir.dist" value="bin/build/${customization}" />
+		<property name="deploy-url" value="" />
+		<mkdir dir="bin/working" />
+		<mkdir dir="bin/build" />
+	</target>
+	<target name="deploy">
+		<property name="deploy-url"
+		          value="http://www.phoneybible.org/download/" />
+	</target>
+	<target name="pink">
+		<property name="customization" value="pink" />
+		<property name="build.pink" value="true" />
+	</target>
+	<target name="green">
+		<property name="customization" value="green" />
+		<property name="build.green" value="true" />
+	</target>
+	<target name="brown">
+		<property name="customization" value="brown" />
+		<property name="build.brown" value="true" />
+	</target>
+	<target name="black">
+		<property name="customization" value="black" />
+		<property name="build.black" value="true" />
+	</target>
+	<target name="blue">
+		<property name="customization" value="blue" />
+		<property name="build.blue" value="true" />
+	</target>
+	<target name="build" depends="init">
+		<j2mepolish>
+			<info name="PhoneyBible"
+			      version="2.2.0"
+			      description="Bible on mobile phone"
+			      vendorName="mcfedr"
+			      infoUrl="http://www.phoneybible.org"
+			      jarName="PhoneyBible-${polish.locale}.jar"
+			      jarUrl="${deploy-url}${polish.jarName}"
+			      copyright="Copyright 2008 Fred Nicollson. All rights reserved."
+			      icon="/icon.png" />
+			<deviceRequirements>
+				<requirement name="Identifier" value="Generic/midp2" />
+			</deviceRequirements>
+			<build fullscreen="true"
+			       usePolishGui="true"
+			       workDir="${dir.work}"
+			       destDir="${dir.dist}">
+				<sources>
+					<source dir="src" />
+				</sources>
+				<midlet name="PhoneyBible" class="net.mcfedr.mobible.MoBible" icon="/icon.png" />
+				<variables>
+					<variable name="polish.useScrollBar" value="true" />
+					<variable name="trial.version" value="true" if="test" />
+				</variables>
+				<resources dir="resources/base" defaultexcludes="yes">
+					<root dir="resources/${customization}"
+					      if="build.${customization}" />
+					<copier class="net.mcfedr.mohelpers.ResourceCopier"
+					        classpath="../mohelpers/bin/">
+					</copier>
+					<localization if="test">
+						<locale name="${test.version}" encoding="utf-8" />
+					</localization>
+					<!--<localization unless="test">
+						<locale name="en_bbe, ru, uk, xx_trial, xx_small, xx_big"
+						        encoding="utf-8" />
+					</localization>-->
+					<localization unless="test">
+						<locale name="en_asv, en_bbe, en_kjv, en_msg, en_web, fr_dar, fr_lsg, hu, ru, sv, tl, uk, zh_cuv" encoding="utf-8" />
+					</localization>
+				</resources>
+				<obfuscator name="ProGuard" unless="test">
+					<parameter name="optimize" value="true" />
+				</obfuscator>
+				<debug if="test"
+				       showLogOnError="true"
+				       verbose="true"
+				       level="error" />
+			</build>
+		</j2mepolish>
+	</target>
+	<target name="emulate">
+		<java jar="${mpp.home}/player.jar" fork="true">
+			<arg value="bin/build/${customization}/PhoneyBible-${test.version}.jar" />
+		</java>
+	</target>
+</project>
