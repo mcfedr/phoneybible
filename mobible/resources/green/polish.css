@@ -1,0 +1,43 @@
+colors {
+	fg:#000;
+	bg:#FFF;
+	spec:#71c93c;
+	
+	titleFGColor:fg;
+	titleBGTop:spec;
+	titleBGBottom:bg;
+	
+	mainFGColor:fg;
+	mainBGColor:bg;
+	mainScroll:fg;
+	
+	linkFGHColor:bg;
+	linkBGHColor:spec;
+	
+	fieldFGColor:fg;
+	fieldBGColor:spec;
+	fieldBorderColor:bg;
+	fieldBorderHColor:fg;
+	
+	gaugeColor:fg;
+	gaugeGap:spec;
+	
+	buttonFGColor:fg;
+	buttonBGColor:spec;
+	buttonBorderColor:bg;
+	buttonBorderHColor:fg;
+	
+	lineColor:spec;
+	
+	chapterFGColor:fg;
+	chapterBGColor:bg;
+	chapterScroll:fg;
+	chapterFGHColor:fg;
+	chapterBGHColor:spec;
+	
+	listFGColor:fg;
+	listBGColor:bg;
+	listScroll:fg;
+	listBorderColor:bg;
+	listBorderHColor:fg;
+}

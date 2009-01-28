@@ -1,0 +1,221 @@
+title {
+	padding: 2;
+	font-face: proportional;
+	font-size: large;
+	font-style: bold;
+	font-color: titleFGColor;
+	/*text-effect: shadow;
+	text-shadow-color: shadowColor;*/
+	background {
+		type: vertical-gradient;
+		top-color: titleBGTop;
+		bottom-color: titleBGBottom;
+		start: 2%;
+		end: 90%;
+	}
+	border: none;
+	layout: horizontal-center | horizontal-expand;
+}
+.mainform {
+	padding: 2;
+	font-face: proportional;
+	font-size: medium;
+	font-color: mainFGColor;
+	background {
+		top: title;
+		color: mainBGColor;
+	}
+	scrollbar {
+		slider-color: mainScroll;
+		slider-width: 3;
+	}
+/*	screen-change-animation: left;
+	left-screen-change-animation-speed: 50;*/
+}
+.field {
+	label-style:fieldlabel;
+	layout:expand;
+	padding: 2;
+	font-face: proportional;
+	font-size: medium;
+	font-color:fieldFGColor;
+	background {
+		top: title;
+		color: fieldBGColor;
+		type:round-rect;
+	}
+	border {
+		color:fieldBorderColor;
+		width:1;
+		type:round-rect;
+	}
+	gauge{
+		mode: chunked;
+		color:gaugeColor;
+		gap-color:gaugeGap;
+		height: 2; 
+	}
+}
+.field:hover {
+	border {
+		color:fieldBorderHColor;
+	}
+}
+.fieldlabel {
+	font-size: medium;
+	font-color: mainFGColor;
+}
+.button {
+	layout:right;
+	padding: 2;
+	font-face: proportional;
+	font-size: medium;
+	font-color:buttonFGColor;
+	background {
+		top: title;
+		color: buttonBGColor;
+		type:round-rect;
+	}
+	border {
+		color:buttonBorderColor;
+		width:1;
+		type:round-rect;
+	}
+}
+.button:hover {
+	border {
+		color:buttonBorderHColor;
+	}
+}
+.section extends mainform {
+	border: none;
+	layout: expand;
+	font-style:bold;
+	background {
+		type: vertical-gradient;
+		bottom-color: lineColor;
+		top-color: mainBGColor;
+		start: 90%;
+		end: 100%;
+	}
+}
+.hyperlink {
+	layout:expand;
+	padding: 2;
+	font-face: proportional;
+	font-size: medium;
+	font-color:mainFGColor;
+	background {
+		top: title;
+		color: mainBGColor;
+		type:round-rect;
+	}
+	border {
+		color:mainBGColor;
+		width:1;
+		type:round-rect;
+	}
+}
+.hyperlink:hover {
+	border {
+		color:listBorderHColor;
+	}
+}
+/*listitem {
+	font-color: chapterFGColor;
+	font-face: proportional;
+	font-size: small;
+}*/
+.chapterlist {
+	layout:expand;
+	padding: 2;
+	font-face: proportional;
+	font-size: small;
+	font-color: chapterFGColor;
+	background {
+		top: title;
+		color: chapterBGColor;
+		type:round-rect;
+	}
+	scrollbar {
+		slider-color: chapterScroll;
+		slider-width: 3;
+	}
+}
+.chapterlist:hover {
+	font-color: chapterFGHColor;
+	background {
+		color: chapterBGHColor;
+	}
+}
+.chapterlistitem {
+	layout:expand;
+	padding: 2;
+	font-face: proportional;
+	font-size: small;
+	font-color: chapterFGColor;
+	background {
+		color: chapterBGColor;
+		type:round-rect;
+	}
+}
+.chapterlistitem:hover {
+	font-color: chapterFGHColor;
+	background {
+		color: chapterBGHColor;
+	}
+}
+.booklist {
+	layout:expand;
+	padding: 2;
+	font-face: proportional;
+	font-size: small;
+	font-color: listFGColor;
+	background {
+		top: title;
+		color: listBGColor;
+	}
+	border {
+		width:1;
+		color:listBorderColor;
+		type:round-rect;
+	}
+	scrollbar {
+		slider-color: listScroll;
+		slider-width: 3;
+	}
+}
+.booklist:hover {
+	border {
+		color:listBorderHColor;
+	}
+}
+.booklistitem {
+	layout:expand;
+	padding: 2;
+	font-face: proportional;
+	font-size: small;
+	font-color: listFGColor;
+	background {
+		top: title;
+		color: listBGColor;
+	}
+	border {
+		width:1;
+		color:listBorderColor;
+		type:round-rect;
+	}
+}
+.booklistitem:hover {
+	border {
+		color:listBorderHColor;
+	}
+}
+.about {
+	label-style:aboutlabel;
+	layout:center;
+}
+.aboutlabel {
+	layout:center;
+	font-style:bold;
+}
