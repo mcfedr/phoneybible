@@ -47,7 +47,7 @@ public class BookListScreen extends List implements BibleListenable, Updatable {
 			append(books[i], null);
 		}
 		setSelectedIndex(v.getChapter().getBook().getId(), true);
-		container.focus(getSelectedIndex());
+		container.focusChild(getSelectedIndex());
 	}
 
 	public void setBibleListener(BibleListener l) {
@@ -61,7 +61,7 @@ public class BookListScreen extends List implements BibleListenable, Updatable {
 			init(v);
 		}
 		setSelectedIndex(v.getChapter().getBook().getId(), true);
-		container.focus(getSelectedIndex());
+		container.focusChild(getSelectedIndex());
 	}
 
 	public Book getSelectedBook() {

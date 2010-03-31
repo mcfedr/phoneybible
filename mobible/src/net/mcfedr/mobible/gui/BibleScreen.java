@@ -71,7 +71,7 @@ public class BibleScreen extends List implements Updatable, BibleListenable {
 		}
 		setTitle(chapter.toString());
 		setSelectedIndex(verse.getId(), true);
-		container.focus(getSelectedIndex());
+		container.focusChild(getSelectedIndex());
 	}
 
 	public boolean handleKeyPressed(int keyCode, int gameAction) {
@@ -102,7 +102,7 @@ public class BibleScreen extends List implements Updatable, BibleListenable {
 		display(verse);
 		super.showNotify();
 		setSelectedIndex(verse.getId(), true);
-		container.focus(getSelectedIndex());
+		container.focusChild(getSelectedIndex());
 	}
 
 	public void setBibleListener(BibleListener l) {

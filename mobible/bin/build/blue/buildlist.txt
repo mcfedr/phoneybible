@@ -1,2 +1,0 @@
-Generic/midp2	xx_BIG	PhoneyBible-xx_BIG.jar	PhoneyBible-xx_BIG.jad	-	nullxnull
-

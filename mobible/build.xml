@@ -2,12 +2,13 @@
 
 	<property file="${user.name}.properties" />
 	<property file="midlet.properties" />
-	<property name="polish.home" value="/Developer/Applications/J2ME-Polish" />
+	<property name="polish.home" value="/Developer/J2ME-Polish" />
 	<property file="${polish.home}/global.properties" />
 	<property name="nokia.home" value="/" />
 	<property name="sony-ericsson.home" value="/" />
 	<property name="motorola.home" value="/" />
-	<property name="mpp.home" value="/Developer/Applications/mpp-sdk" />
+	<property name="mpp.home" value="/Developer/mpp-sdk" />
+	<property name="android.home" location="/Developer/android-sdk-mac_86" />
 	<property name="siemens.home" value="/" />
 	<taskdef name="j2mepolish"
 	         classname="de.enough.polish.ant.PolishTask"
@@ -66,10 +67,11 @@
 			      infoUrl="http://www.phoneybible.org"
 			      jarName="PhoneyBible-${polish.locale}.jar"
 			      jarUrl="${deploy-url}${polish.jarName}"
-			      copyright="Copyright 2008 Fred Nicollson. All rights reserved."
+			      copyright="Copyright 2010 Fred Cox. All rights reserved."
 			      icon="/icon.png" />
 			<deviceRequirements>
-				<requirement name="Identifier" value="Generic/midp2" />
+				<!--<requirement name="Identifier" value="Generic/midp2" />-->
+				<requirement name="Identifier" value="Generic/android" />
 			</deviceRequirements>
 			<build fullscreen="true"
 			       usePolishGui="true"
@@ -97,7 +99,7 @@
 						        encoding="utf-8" />
 					</localization>-->
 					<localization unless="test">
-						<locale name="en_asv, en_bbe, en_kjv, en_msg, en_web, fr_dar, fr_lsg, hu, ru, sv, tl, uk, zh_cuv" encoding="utf-8" />
+						<locale name="en_asv, en_bbe, en_kjv, en_msg, en_web, fr_dar, fr_lsg, hu, ru, sv, tl, uk, zh_cuv, xx_big, xx_small, xx_trail" encoding="utf-8" />
 					</localization>
 				</resources>
 				<obfuscator name="ProGuard" unless="test">

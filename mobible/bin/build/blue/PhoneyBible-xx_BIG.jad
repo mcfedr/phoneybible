@@ -1,9 +1,0 @@
-MIDlet-Name: PhoneyBible
-MIDlet-Version: 2.2.0
-MIDlet-Vendor: mcfedr
-MIDlet-Jar-URL: PhoneyBible-xx_BIG.jar
-MIDlet-Jar-Size: 10503648
-MIDlet-Description: Bible on mobile phone
-MIDlet-Icon: /icon.png
-MIDlet-Info-URL: http://www.phoneybible.org
-MIDlet-1: MoBible,,net.mcfedr.mobible.MoBible
