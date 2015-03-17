@@ -1,0 +1,1 @@
+the bible on mobile phones, using j2me
